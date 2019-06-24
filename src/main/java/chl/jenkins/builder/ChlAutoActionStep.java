@@ -8,6 +8,8 @@ import hudson.model.Run;
 import hudson.model.TaskListener;
 import hudson.tasks.Builder;
 import hudson.tasks.BuildStepDescriptor;
+
+import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import com.google.common.base.Strings;
@@ -94,6 +96,7 @@ public class ChlAutoActionStep extends Builder implements SimpleBuildStep {
     }
 
     @Extension(dynamicLoadable=YesNoMaybe.YES)
+    @Symbol("chlAtuoAction")
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
         @Override
         public boolean isApplicable(Class<? extends AbstractProject> aClass) {
