@@ -9,6 +9,8 @@ import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -49,12 +51,20 @@ public class ChlLoadLib{
 		}).collect(Collectors.toSet()).toArray(new URL[]{});
 	}	
 	
-	public Object run(String libPath, String workspacePath, String browserString, String scriptContent, boolean isRunScriptOnly) {		
-			
-		final URLClassLoader loader = new URLClassLoader(loadLibUrl(libPath));
-		try {			
+	public Object run(final String libPath, String workspacePath, String browserString, String scriptContent, boolean isRunScriptOnly) {	
+		              
+		final URLClassLoader loader = AccessController.doPrivileged(new PrivilegedAction<URLClassLoader>() {
+			@Override
+			public URLClassLoader run() {
+				return new URLClassLoader(loadLibUrl(libPath));
+			}			
+		});
+				
+		if (loader == null) return null;
+		
+		try {						
 	    	//GatePass pass = new GatePass(browserString,workspacePath,content,runScriptOnly);
-	    	//ChlTestSuite result = GateBoss.run(pass);
+	    	//ChlTestSuite result = GateBoss.run(pass);014
 
 			Class<?> gpClass = loader.loadClass("chl.gate.GatePass");
 			Object gatepass = gpClass.getConstructor(String.class,String.class,String.class,boolean.class).newInstance(browserString,workspacePath,scriptContent,isRunScriptOnly);

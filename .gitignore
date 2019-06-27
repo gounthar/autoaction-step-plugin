@@ -4,3 +4,6 @@
 /work
 .classpath
 .project
+/pom.xml.releaseBackup
+/build.bat
+/release.properties
