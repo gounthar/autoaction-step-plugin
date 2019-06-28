@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
 	<artifactId>autoaction-step</artifactId>
-	<version>0.9</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	<properties>
 		<jenkins.version>2.7.3</jenkins.version>
@@ -85,10 +85,9 @@
 	<url>https://wiki.jenkins.io/display/JENKINS/AutoAction+Step+Plugin</url>
 	
     <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/autoaction-step-plugin.git</connection>
-        <developerConnection>scm:git:ssh:@github.com:jenkinsci/autoaction-step-plugin.git</developerConnection>
+        <connection>scm:git://github.com/jenkinsci/autoaction-step-plugin.git</connection>
+        <developerConnection>scm:git:@github.com:jenkinsci/autoaction-step-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/autoaction-step-plugin</url>
-  	  <tag>autoaction-step-0.9</tag>
   </scm>
 
 	<repositories>
