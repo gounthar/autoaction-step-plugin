@@ -84,13 +84,11 @@
 
 	<url>https://wiki.jenkins.io/display/JENKINS/AutoAction+Step+Plugin</url>
 	
-	<!-- 
     <scm>
         <connection>scm:git:https://github.com/jenkinsci/autoaction-step-plugin.git</connection>
         <developerConnection>scm:git:https:@github.com:jenkinsci/autoaction-step-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/autoaction-step-plugin</url>
     </scm>
-     -->
 
 	<repositories>
 		<repository>
