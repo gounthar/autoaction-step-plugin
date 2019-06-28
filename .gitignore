@@ -1,4 +1,5 @@
 *.cmd
+*.bat
 /.settings
 /target
 /work
