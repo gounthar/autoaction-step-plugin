@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>3.4</version>
+		<version>4.51</version>
 		<relativePath />
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
@@ -12,8 +12,7 @@
 	<version>1.2-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	<properties>
-		<jenkins.version>2.7.3</jenkins.version>
-		<java.level>8</java.level>
+		<jenkins.version>2.346.3</jenkins.version>
 	</properties>
 	<name>AutoAction Plugin</name>
 	<description>Run the auto actions from "flat lines" scripts based on Selenium WebDriver</description>
